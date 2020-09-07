@@ -18,4 +18,12 @@ public class MainClassTest {
                 actualNum > numForComparison);
     }
 
+    @Test
+    public void testGetClassString() {
+        String expectedSubStringLower = "hello";
+        String expectedSubStringCap = "Hello";
+        String actualString = new MainClass().getClassString();
+        Assert.assertTrue(String.format("Actual class string %1$s doesn't contain %2$s or %3$s", actualString, expectedSubStringLower, expectedSubStringCap),
+                actualString.contains(expectedSubStringLower) || actualString.contains(expectedSubStringCap));
+    }
 }
